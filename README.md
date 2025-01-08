@@ -12,6 +12,8 @@ A full-stack movie search application that allows users to search for movies, ad
 - [Installation](#installation)
   - [Frontend](#frontend-setup)
   - [Backend](#backend-setup)
+  - [Docker Setup](#docker-setup)
+  - [Running Migrations](#running-migrations)
 - [API Documentation](#api-documentation)
 
 ---
@@ -87,6 +89,27 @@ To run this application locally, you need to set up both the frontend and the ba
     Make sure you have Postgres running locally.
 4. Start the backend server: `npm run start:dev`
 
+
+### **Docker Setup**
+
+If you prefer using Docker to set up the backend, you can use the provided docker-compose.yml to easily set up the backend environment along with PostgreSQL.
+Starting the Backend with Docker
+
+Make sure Docker is installed on your machine.
+
+In the backend folder, run the following command to start the backend services and PostgreSQL:
+
+`docker-compose up --build`
+
+This will start the backend server on http://localhost:3333 and the PostgreSQL database.
+
+
+### **Running Migrations**
+In the backend folder, run the following command to apply any necessary migrations with Prisma:
+
+`npx prisma migrate deploy`
+
+This will ensure your PostgreSQL database is up-to-date with the required schema.
 
 #### API Documentation
 The backend exposes several endpoints for interacting with the movie data and favorites:
